@@ -23,7 +23,8 @@ const eventActions = {
 	getEvents: () => dispatch => {
 		fetch(`${url}/list`, {
 			headers: {
-				'Content-Type': 'application/json'
+				'Content-Type': 'application/json',
+				authorization: localStorage.token
 			}
 		})
 		.then(res => res.json())

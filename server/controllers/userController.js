@@ -31,7 +31,7 @@ module.exports = {
          })
         }
         else {
-          return res.status(401).json({err: "Invalid User"})
+          return res.status(401).json({err: "Invalid Credentials"})
         }
       })
     })

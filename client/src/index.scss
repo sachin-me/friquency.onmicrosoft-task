@@ -61,8 +61,16 @@ body {
   .message {
     margin: 1rem 0;
     text-align: center;
-    color: #873F2C;
+    color: #ea3a3afa;
     font-size: 1.2rem;
+  }
+  .notice {
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 0.75rem 0;
+    a {
+      color: #873F2C;
+    }
   }
 }
 
@@ -79,5 +87,16 @@ body {
     div {
       margin: 0.75rem 0;
     }
+  }
+}
+
+// Dashboard
+.dashboard-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  .logout {
+    color: #fff;
+    cursor: pointer;
   }
 }

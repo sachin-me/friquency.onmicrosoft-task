@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import actions from '../actions/user.action';
 
 class Signup extends Component {
@@ -49,6 +50,9 @@ class Signup extends Component {
             <input type="submit" value="Signup" />
           </div>
         </form>
+        <div className='notice'>
+          Already an account? <Link to='/login'>Login</Link>
+        </div>
         <div className='message'>{this.state.message}</div>
       </div>
     )

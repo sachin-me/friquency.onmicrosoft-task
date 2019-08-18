@@ -7,6 +7,6 @@ const isAuth = require('./../controllers/authController').isLogged
 router.post('/create', isAuth, eventController.create)
 
 // getting list of events
-router.get('/list', eventController.getEvents);
+router.get('/list', isAuth, eventController.getEvents);
 
 module.exports = router;

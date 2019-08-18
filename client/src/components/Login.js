@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import actions from '../actions/user.action';
 
 class Login extends Component {
@@ -28,7 +29,7 @@ class Login extends Component {
     }
     this.props.dispatch(actions.loginUser(data, (success, err) => {
       if (success) {
-        this.props.history.push('/');
+        window.location.href = '/events';
       } else {
         this.setState({
           message: err
@@ -47,6 +48,9 @@ class Login extends Component {
             <input type="submit" value="Login" />
           </div>
         </form>
+        <div className='notice'>
+          Need an account? <Link to='/register'>Signup</Link>
+        </div>
         <div className='message'>{this.state.message}</div>
       </div>
     )
