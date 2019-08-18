@@ -25,7 +25,7 @@ class CreateEvent extends Component {
 
     this.props.dispatch(eventActions.createEvent(data, success => {
       if (success) {
-        console.log('create event success')
+        this.props.history.push('/events');
       }
     }))
   }
