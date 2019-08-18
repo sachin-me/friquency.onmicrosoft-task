@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Slabo+27px&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web&display=swap');
+
 // Body 
 body {
   margin: 0;
@@ -11,6 +15,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 0 1rem;
+  font-family: 'Lato', sans-serif;
   a {
     color: #fff
   }
@@ -28,6 +33,7 @@ body {
   margin: 4rem auto;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   padding: 1rem;
+  font-family: 'Titillium Web', sans-serif;
   form {
     display: grid;
     grid-gap: 1rem;
@@ -76,6 +82,7 @@ body {
 
 .events-wrapper {
   margin: 4rem 0;
+  font-family: 'Slabo 27px', serif;
   .event-card {
     margin: 1rem auto;
     max-width: 400px;
@@ -87,6 +94,9 @@ body {
     div {
       margin: 0.75rem 0;
     }
+    .event-info {
+      color: #873F2C;
+    }
   }
 }
 
@@ -95,6 +105,7 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  font-family: 'Lato', sans-serif;
   .logout {
     color: #fff;
     cursor: pointer;
