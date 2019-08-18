@@ -14,7 +14,7 @@ const actions = {
       if (user.msg) {
         cb(true)
       } else {
-        cb(false)
+        cb(false, user.err)
       }
     })
   },
@@ -39,7 +39,7 @@ const actions = {
         })
         cb(true)
       } else {
-        cb(false)
+        cb(false, user.err)
       }
     })
   }

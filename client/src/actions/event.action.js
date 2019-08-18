@@ -2,7 +2,6 @@ const url = '/events'
 
 const eventActions = {
 	createEvent: (data, cb) => dispatch => {
-		console.log(localStorage.token, 'token in event action')
 		fetch(`${url}/create`, {
 			method: 'POST',
 			headers: {
@@ -13,7 +12,6 @@ const eventActions = {
 		})
 		.then(res => res.json())
 		.then(data => {
-			console.log(data, 'data in event action');
 			if (data.msg) {
 				cb(true);
 			} else {

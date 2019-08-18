@@ -23,7 +23,6 @@ module.exports = {
 						events: event._id
 					}
 				}, { new: true }, (err, updatedUser) => {
-					console.log(updatedUser, 'in event ctrl');
 					if (err) {
 						return res.status(403).json({
 							err: 'Bad Request'

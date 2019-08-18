@@ -7,7 +7,8 @@ class Signup extends Component {
   state = {
     username: '',
     email: '',
-    password: ''
+    password: '',
+    message: ''
   }
 
   handleChange = ({target: { name, value }}) => {
@@ -18,9 +19,21 @@ class Signup extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.dispatch(actions.createUser(this.state, success => {
+    const { username, email, password } = this.state;
+    const data = { username, email, password }
+
+    if (!username && !email && !password) {
+      return this.setState({
+        message: 'all fields are mendatory'
+      })
+    }
+    this.props.dispatch(actions.createUser(data, (success, err) => {
       if (success) {
         this.props.history.push('/login');
+      } else {
+        this.setState({
+          message: err
+        })
       }
     }))
   }
@@ -36,6 +49,7 @@ class Signup extends Component {
             <input type="submit" value="Signup" />
           </div>
         </form>
+        <div className='message'>{this.state.message}</div>
       </div>
     )
   }

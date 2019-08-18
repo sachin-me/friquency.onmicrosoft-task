@@ -9,10 +9,8 @@ module.exports = {
     const newUser = new User({
       username, email, password
     })
-    // console.log(newUser, 'user created')
     newUser.save((err, user) => {
       if(err) return res.status(500).json({err: "Failed to create new user"})
-      // console.log(user, 'success')
       res.status(200).json({msg: 'user created',
                 userInfo: { username: user.username, email: user.email }
       })
@@ -21,7 +19,6 @@ module.exports = {
 
   login: (req, res, next) => {
     User.findOne({email: req.body.email}, (err, user) => {
-      // console.log(user, 'checkpoint')
       if(!user){
         return res.status(401).json({err: "User not found."})
       }
@@ -30,7 +27,6 @@ module.exports = {
           const id = user._id
           const token = jwt.sign({id}, process.env.secret);
           req.headers.authorization = token;
-          // console.log(req.headers, 'in login');
           return res.status(200).json({msg: 'user logged in', userInfo: { name: user.username, email: user.email, token }
          })
         }

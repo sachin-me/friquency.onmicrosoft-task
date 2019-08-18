@@ -6,7 +6,8 @@ class Login extends Component {
 
   state = {
     email: '',
-    password: ''
+    password: '',
+    message: ''
   }
 
   handleChange = ({target: { name, value }}) => {
@@ -17,9 +18,21 @@ class Login extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.dispatch(actions.loginUser(this.state, success => {
+    const { email, password } = this.state;
+    const data = { email, password }
+
+    if (!email && !password) {
+      return this.setState({
+        message: 'all fields are mendatory'
+      })
+    }
+    this.props.dispatch(actions.loginUser(data, (success, err) => {
       if (success) {
         this.props.history.push('/');
+      } else {
+        this.setState({
+          message: err
+        })
       }
     }))
   }
@@ -34,6 +47,7 @@ class Login extends Component {
             <input type="submit" value="Login" />
           </div>
         </form>
+        <div className='message'>{this.state.message}</div>
       </div>
     )
   }

@@ -4,7 +4,6 @@ const User = require('./../models/User');
 module.exports = {
   isLogged: (req, res, next) => {
     const token = req.headers['authorization'];
-    console.log(token, 'token in auth ctrl')
 
     if (!token) {
       return res.status(401).json({
