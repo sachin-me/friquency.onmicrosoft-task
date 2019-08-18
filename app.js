@@ -41,6 +41,7 @@ if (process.env.NODE_ENV === "development") {
  app.use(require("webpack-hot-middleware")(compiler));
 }
 
+app.use("/events", require("./server/routes/events"));
 app.use("/users", require("./server/routes/users"));
 app.use(require("./server/routes/index"));
 

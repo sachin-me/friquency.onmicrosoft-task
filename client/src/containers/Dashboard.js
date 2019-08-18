@@ -5,7 +5,7 @@ const Dashboard = () => {
   return (
     <div>
       I am a Dashboard
-      <Link to='/event/create' >Create an event</Link>
+      <Link to='/events/create' >Create an event</Link>
     </div>
   );
 }

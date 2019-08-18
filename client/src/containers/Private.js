@@ -8,7 +8,7 @@ const Private = () => {
     <div>
       <Router>
         <Dashboard />
-        <Route exact path='/event/create' component={CreateEvent} />
+        <Route exact path='/events/create' component={CreateEvent} />
       </Router>
     </div>
   );

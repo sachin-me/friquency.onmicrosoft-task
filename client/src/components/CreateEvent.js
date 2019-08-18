@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
+import eventActions from '../actions/event.action';
 
 class CreateEvent extends Component {
 
@@ -15,10 +17,23 @@ class CreateEvent extends Component {
     })
   }
 
+  handleSubmit = (e) => {
+    e.preventDefault();
+
+    const { eventname, eventhost, eventdate, eventplace } = this.state;
+    const data =  { eventname, eventhost, eventdate, eventplace }
+
+    this.props.dispatch(eventActions.createEvent(data, success => {
+      if (success) {
+        console.log('create event success')
+      }
+    }))
+  }
+
   render() {
     return (
       <div>
-        <form action="" method="post">
+        <form action="" method="post" onSubmit={this.handleSubmit}>
           <input type="text" name="eventname" placeholder="event name" onChange={this.handleChange} />
           <input type="text" name="eventhost" placeholder="event host name" onChange={this.handleChange} />
           <input type="date" name="eventdate" id="" onChange={this.handleChange} />
@@ -30,4 +45,4 @@ class CreateEvent extends Component {
   }
 }
 
-export default CreateEvent;
+export default connect(null)(CreateEvent);
