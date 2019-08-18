@@ -26,11 +26,15 @@ class Login extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <input type="email" name="email" placeholder="email" onChange={this.handleChange} />
-        <input type="password" name="password" placeholder="password" onChange={this.handleChange} />
-        <input type="submit" value="Login" />
-      </form>
+      <div className="create-event-wrapper">
+        <form onSubmit={this.handleSubmit}>
+          <input type="email" name="email" placeholder="email" onChange={this.handleChange} />
+          <input type="password" name="password" placeholder="password" onChange={this.handleChange} />
+          <div>
+            <input type="submit" value="Login" />
+          </div>
+        </form>
+      </div>
     )
   }
 }

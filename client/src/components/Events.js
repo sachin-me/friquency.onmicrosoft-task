@@ -11,9 +11,8 @@ class Events extends Component {
 
   render() {
     const { events } = this.props;
-    console.log(events, 'events');
     return (
-      <div>
+      <div className="events-wrapper">
         {
           events ? events.map(event => <Event key={event._id} event={event} />) : 'Loading...'
         }

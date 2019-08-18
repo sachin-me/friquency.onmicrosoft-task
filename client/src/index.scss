@@ -1,4 +1,83 @@
+// Body 
 body {
-  background: #888;
-  color: aliceblue;
+  margin: 0;
+}
+
+// Header
+.header-wrapper {
+  background: #873F2C;
+  height: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  a {
+    color: #fff
+  }
+  div {
+    a {
+      margin: 0 1rem;
+      text-decoration: none;
+    }
+  }
+}
+
+// Create Event
+.create-event-wrapper {
+  max-width: 600px;
+  margin: 4rem auto;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 1rem;
+  form {
+    display: grid;
+    grid-gap: 1rem;
+    input {
+			border: 1px solid #888;
+			border-radius: 0.15rem;
+			height: 2rem;
+			padding: 0.25rem;
+			outline: none;
+			font-size: 1rem;
+		}
+		input[type="text"] {
+			&:active, &:focus {
+				border: 1px solid #873F2C;
+			}
+    }
+    input[type="submit"] {
+      height: 2.5rem;
+      width: 6.5rem;
+      cursor: pointer;
+      background: #873F2C;
+      color: aliceblue;
+      border: 1px solid #873F2C;
+      &:hover {
+        background: #fff;
+        border: 1px solid #888;
+        color: #873F2C;
+      }
+    }
+  }
+  .message {
+    margin: 1rem 0;
+    text-align: center;
+    color: #873F2C;
+    font-size: 1.2rem;
+  }
+}
+
+.events-wrapper {
+  margin: 4rem 0;
+  .event-card {
+    margin: 1rem auto;
+    max-width: 400px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 1rem;
+    .dash {
+      margin: 0 0.75rem;
+    }
+    div {
+      margin: 0.75rem 0;
+    }
+  }
 }
