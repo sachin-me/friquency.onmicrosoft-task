@@ -5,7 +5,7 @@ class CreateEvent extends Component {
   state = {
     eventname: '',
     eventhost: '',
-    eventdate: '',
+    eventdate: new Date(),
     eventplace: ''
   }
 

@@ -7,6 +7,7 @@ const UserSchema = new Schema({
   username: { type: String },
   email: { type: String },
   password: { type: String },
+  events: [{ type: Schema.Types.ObjectId, ref: 'Event' }]
 })
 
 UserSchema.pre('save', function(next) {
